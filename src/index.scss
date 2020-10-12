@@ -6,10 +6,35 @@
 
 body {
 	font-family: "Courier New", Courier, monospace;
-	background-color: #2d3436;
 }
 
 .app {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #2d3436;
+}
+
+.app.theme-black {
+	background-color: #2d3436;
+}
+.app.theme-blue {
+	background-color: #3498db;
+}
+.app.theme-white {
+	background-color: #ecf0f1;
+}
+.app.theme-green {
+	background-color: #2ecc71;
+}
+.app.theme-purple {
+	background-color: #9b59b6;
+}
+.app.theme-yellow {
+	background-color: #f1c40f;
+}
+
+.weather-app-container {
 	background-image: url(./assets/cold-bg.jpg);
 	background-size: cover;
 	background-position: bottom;
@@ -19,7 +44,7 @@ body {
 	box-shadow: 0px 0px 20px #ffffff;
 }
 
-.app.warm {
+.weather-app-container.warm {
 	background-image: url(./assets/warm-bg.jpg);
 }
 
@@ -31,6 +56,60 @@ main {
 		rgba(0, 0, 0, 0.1),
 		rgba(0, 0, 0, 0.7)
 	);
+}
+
+.theme-options {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	display: none;
+	flex-direction: column;
+
+	div {
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		border-radius: 4px;
+		margin: 3px 5px;
+		border: 1px solid #fff;
+		opacity: 0.5;
+
+		&:hover {
+			opacity: 1;
+		}
+		&:active {
+			opacity: 1;
+		}
+	}
+
+	.active{
+		opacity: 1;
+	}
+
+	#theme-black {
+		background-color: #2d3436;
+	}
+	#theme-purple {
+		background-color: #9b59b6;
+	}
+	#theme-yellow {
+		background-color: #f1c40f;
+	}
+	#theme-white {
+		background-color: #ecf0f1;
+	}
+	#theme-green {
+		background-color: #2ecc71;
+	}
+	#theme-blue {
+		background-color: #3498db;
+	}
+}
+@media only screen and (min-width: 425px) {
+	.theme-options {
+		display: flex;
+	}
 }
 
 .search-box {
@@ -103,8 +182,8 @@ main {
 		box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 	}
 
-	.iconWeather{
-		img{
+	.iconWeather {
+		img {
 			width: 100px;
 		}
 	}
